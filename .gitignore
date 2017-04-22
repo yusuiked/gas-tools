@@ -113,7 +113,6 @@ tags
 # End of https://www.gitignore.io/api/node,osx,visualstudiocode,vim
 
 # browserify and espower are generated files
-src/
 test/lib/
 
 # Google Apps Scirpt (gapps)
