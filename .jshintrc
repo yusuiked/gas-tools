@@ -1,0 +1,10 @@
+{
+  // Relaxes
+  "asi": true,
+  "sub": true,
+  "eqnull": true,
+
+  // Environments
+  "jquery": true,
+  "browser": true
+}
