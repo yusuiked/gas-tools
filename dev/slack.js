@@ -14,8 +14,8 @@ Slack.prototype.postEvents = function (calendarName, events) {
 
 function buildPayload(calendarName, events) {
   var text = (events.length > 0
-    ? '@here :fire::shuzo: 今日は ' + events.length + ' 件の予定があります :shuzo::fire:'
-    : '@here :white_check_mark::free: 今日は予定がありません :tada::sparkles:'
+    ? '@here :fire::shuzo: 今日はカレンダー <' + calendarName + '> に ' + events.length + ' 件の予定があります :shuzo::fire:'
+    : '@here カレンダー <' + calendarName + '> に :white_check_mark::free: 今日の予定はありません :tada::sparkles:'
   );
   var payload = {
     username: '本日のご予定 Bot',
