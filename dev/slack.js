@@ -2,8 +2,8 @@ var Slack = function (webhookUrl) {
   this.webhookUrl = webhookUrl;
 }
 
-Slack.prototype.postEvents = function (events) {
-  var payload = buildPayload(events);
+Slack.prototype.postEvents = function (calendarName, events) {
+  var payload = buildPayload(calendarName, events);
   var opts = {
     method: 'POST',
     payload: JSON.stringify(payload)
@@ -12,7 +12,7 @@ Slack.prototype.postEvents = function (events) {
   Logger.log('HTTP Response Status: ' + response.getResponseCode + ', Response: ' + response.getContentText());
 }
 
-function buildPayload(events) {
+function buildPayload(calendarName, events) {
   var text = (events.length > 0
     ? '@here :fire::shuzo: 今日は ' + events.length + ' 件の予定があります :shuzo::fire:'
     : '@here :white_check_mark::free: 今日は予定がありません :tada::sparkles:'
@@ -29,7 +29,7 @@ function buildPayload(events) {
       var attachment = {
         fallback: text,
         color: '#36a64f',
-        author_name: '@yukung',
+        author_name: calendarName,
         author_icon: 'https://secure.gravatar.com/avatar/ff937dd20d07581fd996a4669b6c8c81.jpg?s=16&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0012-16.png',
         title: event.getTitle(),
         fields: [
