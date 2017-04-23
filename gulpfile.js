@@ -9,7 +9,7 @@ var runSequence = require('run-sequence');
 var paths = {
   allSrcJs: 'dev/**/*.js',
   allTestJs: 'test/*.js',
-  entryPoint: 'dev/code.js',
+  entryPoint: 'dev/main.js',
   gulpFile: 'gulpfile.js',
   libDir: 'src',
   testLibDir: 'test/lib',
@@ -52,7 +52,7 @@ gulp.task('browserify', ['test'], function () {
     entries: [paths.entryPoint]
   }).plugin('gasify')
     .bundle()
-    .pipe(source('code.js'))
+    .pipe(source('main.js'))
     .pipe(gulp.dest('src'));
 });
 

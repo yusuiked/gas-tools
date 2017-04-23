@@ -2,7 +2,7 @@
   "name": "gas-tools",
   "version": "0.0.1",
   "description": "Miscellaneous scripts for Google Apps Script.",
-  "main": "index.js",
+  "main": "src/main.js",
   "repository": "git@github.com:yukung/gas-tools.git",
   "author": "yukung <yukung.i@gmail.com>",
   "license": "MIT",
