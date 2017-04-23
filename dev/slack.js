@@ -14,13 +14,14 @@ Slack.prototype.postEvents = function (events) {
 
 function buildPayload(events) {
   var text = (events.length > 0
-    ? ':fire::shuzo: 今日は ' + events.length + ' 件の予定があります :shuzo::fire:'
-    : ':white_check_mark::free: 今日は予定がありません :tada::sparkles:'
+    ? '@here :fire::shuzo: 今日は ' + events.length + ' 件の予定があります :shuzo::fire:'
+    : '@here :white_check_mark::free: 今日は予定がありません :tada::sparkles:'
   );
   var payload = {
     username: '本日のご予定 Bot',
     icon_emoji: ':calendar:',
     text: text,
+    link_names: 1,
     attachments: []
   };
   if (events.length > 0) {
@@ -28,6 +29,8 @@ function buildPayload(events) {
       var attachment = {
         fallback: text,
         color: '#36a64f',
+        author_name: '@yukung',
+        author_icon: 'https://secure.gravatar.com/avatar/ff937dd20d07581fd996a4669b6c8c81.jpg?s=16&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0012-16.png',
         title: event.getTitle(),
         fields: [
           {
