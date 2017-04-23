@@ -1,4 +1,5 @@
 var assert = require('power-assert');
+/*
 var hello = require('../../dev/hello');
 describe('Array', function () {
     describe('#hello()', function() {
@@ -7,3 +8,4 @@ describe('Array', function () {
       })
     })
 });
+*/
