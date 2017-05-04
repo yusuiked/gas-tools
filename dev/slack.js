@@ -3,7 +3,7 @@ var Slack = function (webhookUrl) {
 }
 
 Slack.prototype.postEvents = function (calendarName, events) {
-  var payload = buildPayload(calendarName, events);
+  var payload = buildPayloadForEvents(calendarName, events);
   var opts = {
     method: 'POST',
     payload: JSON.stringify(payload)
